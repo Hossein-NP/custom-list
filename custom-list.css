@@ -1,0 +1,94 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: 0;
+}
+body{
+  background-color: rgb(25, 25, 25);
+  font-family: 'Vazirmatn', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  direction: rtl;
+}
+h4 , p ,h2{
+  color: rgb(240, 240, 240);
+  position: relative;
+  z-index: 2;
+}
+/* style for container */
+.container{
+  width: 400px;
+  height: auto;
+  background-color: darkslateblue;
+  border-radius: 22px;
+  padding: 60px;
+  box-shadow: 20px 20px 55px rgba(10, 10, 10, 0.6),
+              18px 18px 45px rgba(19, 19, 19, 0.7),
+              inset 5px 5px 20px rgba(10, 10, 10, 0.7),
+              inset 7px 7px 20px rgba(255, 255, 255, 0.5),
+              inset -6px -6px 20px rgba(10, 10, 10, 0.7),
+              inset -4px -4px 20px rgba(0, 0, 0, 0.7);
+}
+/* style for lists content */
+.container > .list{
+  width: 100%;
+  margin: 20px 0;
+  display: flex;  
+  align-items: center;
+  position: relative;
+  /* background-color: chocolate; */
+  cursor: pointer;
+}
+/* creat circle shapes with after */
+.container > .list::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: crimson;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: 0.5s;
+}
+.container > .list:hover::after{
+  width: 100%;
+}
+/* style for list number class  */
+.container > .list > .list-number{
+  width: 40px;
+  height: 40px;
+  background-color: rgb(240, 240, 240);
+  border-radius: 50%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  margin: 0 10px 0 0;
+}
+.container > .list > .list-number::after{
+  content: "";
+  width: 38px;
+  height: 38px;
+  background-color: rgb(25, 25, 25);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  transform: scale(0);
+  transition: 0.5s;
+}
+.container > .list:hover .list-number::after{
+  transform: scale(1);
+}
+.container > .list:hover > .list-number span{
+  position: absolute;
+  color: rgb(240, 240, 240);
+  z-index: 3;
+  transition: 0.5s;
+}
+.link{
+  margin-right: 10px;
+}
